@@ -46,7 +46,6 @@
             <Zip>85281</Zip>
             <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
-        <!-- No Rating for this hotel -->
     </Hotel>
 
     <!-- Hotel 4: With Category and single phone -->
@@ -92,7 +91,6 @@
             <Zip>85004</Zip>
             <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
-        <!-- No Rating -->
     </Hotel>
 
     <!-- Hotel 7: Without Category -->
@@ -138,7 +136,6 @@
             <Zip>85281</Zip>
             <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
-        <!-- No Rating element -->
     </Hotel>
 
     <!-- Hotel 10: With Category -->
