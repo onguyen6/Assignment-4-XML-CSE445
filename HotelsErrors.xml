@@ -1,47 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<Hotel> <!-- (1) The root element name is Hotel, instead of Hotels. -->
 
-    <Hotel id="H1">
-        <Name>Westin</Name>
-        <Name>Duplicate Name</Name>
-        <Phone>480-968-8885</Phone>
-        <Phone>800-937-8461</Phone>
-        <Address type="primary">
-            <Number>11</Number>
-            <Street>E.7th St</Street>
-            <City>Tempe</City>
-            <State>AZ</State>
-            <Zip>85281</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
-        
-        <Rating>4.2</Rating>
-    </Hotel>
+  <!-- (2) A required attribute is missing; -->
+  <Hotel Category="Luxury" Rating="4.2">
+    <Name>Westin</Name>
+    <Phone>480-968-8885</Phone>
+    <Phone>800-937-8461</Phone>
+    <Address Number="2435" Street="E.7th St" City="Tempe" State="AZ" Zip="85281"/>
+  </Hotel>
 
-    <Hotel id="H2">
-        <Name>Hilton Phoenix Airport</Name>
-        <Address>
-            <Number>2435</Number>
-            <Street>S 47th St</Street>
-            <City>Phoenix</City>
-            <State>AZ</State>
-            <Zip>85034</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
-        </Address>
-        <Rating>4.1</Rating>
-    </Hotel>
+  <!-- (3) A Phone element is missing on one of the hotels. -->
+  <Hotel Rating="4.1">
+    <Name>Hilton Phoenix Airport</Name>
+    <Address Number="2435" Street="S 47th St" City="Phoenix" State="AZ" Zip="85034" NearestAirport="Sky Harbor"/>
+  </Hotel>
 
-    <Hotel id="H3">
-        <Name>Marriott Tempe</Name>
-        <Phone>480-897-7441</Phone>
-        <Phone>888-236-2427</Phone>
-        <Address type="primary">
-            <Number>200</Number>
-            <Street>E Rio Salado Pkwy</Street>
-            <City>Tempe</City>
-            <State>AZ</State>
-            <Zip>85281</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
-        </Address>
-        <Rating>4.3</Rating>
-    </Hotel>
+  <!-- (4) An Address element has no closing tag. -->
+  <Hotel Rating="4.0">
+    <Name>Marriott Tempe</Name>
+    <Phone>480-897-7441</Phone>
+    <Address Number="200" Street="E Rio Salado Pkwy" City="Tempe" State="AZ" Zip="85281" NearestAirport="Sky Harbor">
+  </Hotel>
+
+  <!-- Dupe (5) Two names are provided for one of the hotels. -->
+  <Hotel Category="Resort" Rating="4.4">
+    <Name>Hyatt Regency Phoenix</Name>
+    <Name>Duplicate Name</Name>
+    <Phone>602-252-1234</Phone>
+    <Address Number="122" Street="N 2nd St" City="Phoenix" State="AZ" Zip="85004" NearestAirport="Sky Harbor"/>
+  </Hotel>
 
 </Hotel>
