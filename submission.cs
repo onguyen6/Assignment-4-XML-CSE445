@@ -50,12 +50,8 @@ namespace ConsoleApp1
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.ValidationType = ValidationType.Schema;
 
-                // Load schema properly using XmlSchema.Read
-                using (XmlReader schemaReader = XmlReader.Create(xsdUrl))
-                {
-                    XmlSchema schema = XmlSchema.Read(schemaReader, null);
-                    settings.Schemas.Add(schema);
-                }
+                // Load schema 
+                settings.Schemas.Add(null, xsdUrl);
 
                 // Collect errors 
                 StringBuilder errors = new StringBuilder();
@@ -81,9 +77,8 @@ namespace ConsoleApp1
             {
                 return $"Validation Error: {ex.Message}";
             }
-        }
             //return "No Error" if XML is valid. Otherwise, return the desired exception message.
-
+        }
 
         public static string Xml2Json(string xmlUrl)
         {
