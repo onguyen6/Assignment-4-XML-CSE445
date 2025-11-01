@@ -46,70 +46,66 @@ namespace ConsoleApp1
         {
             try
             {
-                // A new XML reader settings with validation
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.ValidationType = ValidationType.Schema;
-                
-                // Add the XSD schema to the settings
-                settings.Schemas.Add(null, xsdUrl);
-                
-                // making a validation event handler to throw exceptions on errors
-                settings.ValidationEventHandler += (sender, e) =>
-                {
-                    throw new XmlSchemaValidationException($"Validation error: {e.Message} at line {e.Exception.LineNumber}, position {e.Exception.LinePosition}");
-                };
 
-                // Read and validate the entire XML doc
-                using (XmlReader reader = XmlReader.Create(xmlUrl, settings))
+                // Load schema properly using XmlSchema.Read
+                using (XmlReader schemaReader = XmlReader.Create(xsdUrl))
                 {
-                    while (reader.Read()) 
-                    { 
-                        // Read through entire XML doc
-                    }
+                    XmlSchema schema = XmlSchema.Read(schemaReader, null);
+                    settings.Schemas.Add(schema);
                 }
 
-                return "No errors are found";
-            }
-            catch (XmlSchemaValidationException ex)
-            {
-                return ex.Message;
-            }
-            catch (XmlException ex)
-            {
-                return $"XML Error: {ex.Message}";
+                // Collect errors 
+                StringBuilder errors = new StringBuilder();
+                bool hasErrors = false;
+
+                settings.ValidationEventHandler += (sender, e) =>
+                {
+                    hasErrors = true;
+                    errors.AppendLine($"{e.Message} at line {e.Exception.LineNumber}, position {e.Exception.LinePosition}");
+                };
+
+                using (XmlReader reader = XmlReader.Create(xmlUrl, settings))
+                {
+                while (reader.Read()) 
+                { 
+                    // Read through document
+                }
+                }
+
+                return hasErrors ? errors.ToString().Trim() : "No errors are found";
             }
             catch (Exception ex)
             {
-                return $"Error: {ex.Message}";
+                return $"Validation Error: {ex.Message}";
             }
-
-            //return "No Error" if XML is valid. Otherwise, return the desired exception message.
         }
+            //return "No Error" if XML is valid. Otherwise, return the desired exception message.
+
 
         public static string Xml2Json(string xmlUrl)
         {
             try
             {
-                // starting the load of the XML document from the URL 
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(xmlUrl);
 
-                // converting XML to JSON by Newtonsoft.Json
-                string jsonText = JsonConvert.SerializeXmlNode(xmlDoc, Newtonsoft.Json.Formatting.Indented);
-
-                // The returned jsonText needs to be de-serializable by Newtonsoft.Json package
+                //formatting.None for compact JSON
+                string jsonText = JsonConvert.SerializeXmlNode(xmlDoc, Newtonsoft.Json.Formatting.None);
+        
+                // verify it can be deserialized back (as required by assignment)
+                JsonConvert.DeserializeXmlNode(jsonText);
+        
                 return jsonText;
             }
-            // otherise exception
             catch (Exception ex)
             {
                 return $"Error converting XML to JSON: {ex.Message}";
             }
-
             // The returned jsonText needs to be de-serializable by Newtonsoft.Json package. (JsonConvert.DeserializeXmlNode(jsonText))
             //return jsonText;
-
         }
     }
-
 }
+

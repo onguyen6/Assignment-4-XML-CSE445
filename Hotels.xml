@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="Hotels.xsd">
 
-    <Hotel id="H1">
+    <!-- Hotel 1: for the diagram given-->
+    <Hotel Category="Luxury">
         <Name>Westin</Name>
         <Phone>480-968-8885</Phone>
         <Phone>800-937-8461</Phone>
-        <Address type="primary">
+        <Address id="A1">
             <Number>11</Number>
             <Street>E.7th St</Street>
             <City>Tempe</City>
@@ -15,10 +18,11 @@
         <Rating>4.2</Rating>
     </Hotel>
 
-    <Hotel id="H2">
+    <!-- Hotel 2: Without optional Category attribute -->
+    <Hotel>
         <Name>Hilton Phoenix Airport</Name>
         <Phone>602-273-7777</Phone>
-        <Address type="primary">
+        <Address id="A2">
             <Number>2435</Number>
             <Street>S 47th St</Street>
             <City>Phoenix</City>
@@ -29,11 +33,12 @@
         <Rating>4.1</Rating>
     </Hotel>
 
-    <Hotel id="H3">
+    <!-- Hotel 3: With Category and multiple phones, no Rating -->
+    <Hotel Category="Business">
         <Name>Marriott Tempe</Name>
         <Phone>480-897-7441</Phone>
         <Phone>888-236-2427</Phone>
-        <Address type="primary">
+        <Address id="A3">
             <Number>200</Number>
             <Street>E Rio Salado Pkwy</Street>
             <City>Tempe</City>
@@ -41,13 +46,14 @@
             <Zip>85281</Zip>
             <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
-        <Rating>4.3</Rating>
+        <!-- No Rating for this hotel -->
     </Hotel>
 
-    <Hotel>
+    <!-- Hotel 4: With Category and single phone -->
+    <Hotel Category="Resort">
         <Name>Hyatt Regency Phoenix</Name>
         <Phone>602-252-1234</Phone>
-        <Address type="primary">
+        <Address id="A4">
             <Number>122</Number>
             <Street>N 2nd St</Street>
             <City>Phoenix</City>
@@ -58,10 +64,12 @@
         <Rating>4.4</Rating>
     </Hotel>
 
-    <Hotel id="H5">
+    <!-- Hotel 5: Without Category, with multiple phones -->
+    <Hotel>
         <Name>Sheraton Phoenix Downtown</Name>
         <Phone>602-262-2500</Phone>
-        <Address type="primary">
+        <Phone>800-325-3535</Phone>
+        <Address id="A5">
             <Number>340</Number>
             <Street>N 3rd St</Street>
             <City>Phoenix</City>
@@ -72,10 +80,11 @@
         <Rating>4.2</Rating>
     </Hotel>
 
-    <Hotel id="H6">
+    <!-- Hotel 6: With Category, no Rating -->
+    <Hotel Category="Luxury">
         <Name>Renaissance Phoenix</Name>
         <Phone>602-333-0000</Phone>
-        <Address type="primary">
+        <Address id="A6">
             <Number>100</Number>
             <Street>N 1st St</Street>
             <City>Phoenix</City>
@@ -83,13 +92,14 @@
             <Zip>85004</Zip>
             <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
-        <Rating>4.3</Rating>
+        <!-- No Rating -->
     </Hotel>
 
+    <!-- Hotel 7: Without Category -->
     <Hotel>
         <Name>Holiday Inn Express Phoenix</Name>
         <Phone>602-244-8800</Phone>
-        <Address type="primary">
+        <Address id="A7">
             <Number>620</Number>
             <Street>N 6th St</Street>
             <City>Phoenix</City>
@@ -100,11 +110,12 @@
         <Rating>4.0</Rating>
     </Hotel>
 
-    <Hotel id="H8">
+    <!-- Hotel 8: With Category and multiple phones -->
+    <Hotel Category="Airport">
         <Name>DoubleTree by Hilton Phoenix</Name>
         <Phone>602-225-0500</Phone>
         <Phone>800-222-8733</Phone>
-        <Address type="primary">
+        <Address id="A8">
             <Number>320</Number>
             <Street>N 44th St</Street>
             <City>Phoenix</City>
@@ -115,10 +126,11 @@
         <Rating>4.1</Rating>
     </Hotel>
 
-    <Hotel id="H9">
+    <!-- Hotel 9: Without Category, no Rating -->
+    <Hotel>
         <Name>Courtyard by Marriott Tempe</Name>
         <Phone>480-966-2800</Phone>
-        <Address type="primary">
+        <Address id="A9">
             <Number>601</Number>
             <Street>S Ash Ave</Street>
             <City>Tempe</City>
@@ -126,13 +138,14 @@
             <Zip>85281</Zip>
             <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
-        <Rating>4.2</Rating>
+        <!-- No Rating element -->
     </Hotel>
 
-    <Hotel id="H10">
+    <!-- Hotel 10: With Category -->
+    <Hotel Category="Suite">
         <Name>Embassy Suites by Hilton Phoenix</Name>
         <Phone>602-765-5800</Phone>
-        <Address type="primary">
+        <Address id="A10">
             <Number>10</Number>
             <Street>E Thomas Rd</Street>
             <City>Phoenix</City>
@@ -143,10 +156,12 @@
         <Rating>4.3</Rating>
     </Hotel>
 
-    <Hotel id="H11">
+    <!-- Hotel 11: Without Category, with multiple phones -->
+    <Hotel>
         <Name>Aloft Phoenix Airport</Name>
         <Phone>480-557-9933</Phone>
-        <Address type="primary">
+        <Phone>877-462-5638</Phone>
+        <Address id="A11">
             <Number>4450</Number>
             <Street>E Holmes Ave</Street>
             <City>Phoenix</City>
