@@ -46,6 +46,7 @@ namespace ConsoleApp1
         {
             try
             {
+                // A new XML reader settings with validation
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.ValidationType = ValidationType.Schema;
 
