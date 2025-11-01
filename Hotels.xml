@@ -2,169 +2,147 @@
 <Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="Hotels.xsd">
 
-    <!-- Hotel 1: for the diagram given-->
     <Hotel Category="Luxury">
         <Name>Westin</Name>
         <Phone>480-968-8885</Phone>
         <Phone>800-937-8461</Phone>
-        <Address id="A1">
+        <Address id="A1" NearestAirport="Sky Harbor">
             <Number>11</Number>
             <Street>E.7th St</Street>
             <City>Tempe</City>
             <State>AZ</State>
             <Zip>85281</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
         <Rating>4.2</Rating>
     </Hotel>
 
-    <!-- Hotel 2: Without optional Category attribute -->
     <Hotel>
         <Name>Hilton Phoenix Airport</Name>
         <Phone>602-273-7777</Phone>
-        <Address id="A2">
+        <Address id="A2" NearestAirport="Sky Harbor">
             <Number>2435</Number>
             <Street>S 47th St</Street>
             <City>Phoenix</City>
             <State>AZ</State>
             <Zip>85034</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
         <Rating>4.1</Rating>
     </Hotel>
 
-    <!-- Hotel 3: With Category and multiple phones, no Rating -->
     <Hotel Category="Business">
         <Name>Marriott Tempe</Name>
         <Phone>480-897-7441</Phone>
         <Phone>888-236-2427</Phone>
-        <Address id="A3">
+        <Address id="A3" NearestAirport="Sky Harbor">
             <Number>200</Number>
             <Street>E Rio Salado Pkwy</Street>
             <City>Tempe</City>
             <State>AZ</State>
             <Zip>85281</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
     </Hotel>
 
-    <!-- Hotel 4: With Category and single phone -->
     <Hotel Category="Resort">
         <Name>Hyatt Regency Phoenix</Name>
         <Phone>602-252-1234</Phone>
-        <Address id="A4">
+        <Address id="A4" NearestAirport="Sky Harbor">
             <Number>122</Number>
             <Street>N 2nd St</Street>
             <City>Phoenix</City>
             <State>AZ</State>
             <Zip>85004</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
         <Rating>4.4</Rating>
     </Hotel>
 
-    <!-- Hotel 5: Without Category, with multiple phones -->
     <Hotel>
         <Name>Sheraton Phoenix Downtown</Name>
         <Phone>602-262-2500</Phone>
         <Phone>800-325-3535</Phone>
-        <Address id="A5">
+        <Address id="A5" NearestAirport="Sky Harbor">
             <Number>340</Number>
             <Street>N 3rd St</Street>
             <City>Phoenix</City>
             <State>AZ</State>
             <Zip>85004</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
         <Rating>4.2</Rating>
     </Hotel>
 
-    <!-- Hotel 6: With Category, no Rating -->
     <Hotel Category="Luxury">
         <Name>Renaissance Phoenix</Name>
         <Phone>602-333-0000</Phone>
-        <Address id="A6">
+        <Address id="A6" NearestAirport="Sky Harbor">
             <Number>100</Number>
             <Street>N 1st St</Street>
             <City>Phoenix</City>
             <State>AZ</State>
             <Zip>85004</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
     </Hotel>
 
-    <!-- Hotel 7: Without Category -->
     <Hotel>
         <Name>Holiday Inn Express Phoenix</Name>
         <Phone>602-244-8800</Phone>
-        <Address id="A7">
+        <Address id="A7" NearestAirport="Sky Harbor">
             <Number>620</Number>
             <Street>N 6th St</Street>
             <City>Phoenix</City>
             <State>AZ</State>
             <Zip>85004</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
         <Rating>4.0</Rating>
     </Hotel>
 
-    <!-- Hotel 8: With Category and multiple phones -->
     <Hotel Category="Airport">
         <Name>DoubleTree by Hilton Phoenix</Name>
         <Phone>602-225-0500</Phone>
         <Phone>800-222-8733</Phone>
-        <Address id="A8">
+        <Address id="A8" NearestAirport="Sky Harbor">
             <Number>320</Number>
             <Street>N 44th St</Street>
             <City>Phoenix</City>
             <State>AZ</State>
             <Zip>85008</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
         <Rating>4.1</Rating>
     </Hotel>
 
-    <!-- Hotel 9: Without Category, no Rating -->
     <Hotel>
         <Name>Courtyard by Marriott Tempe</Name>
         <Phone>480-966-2800</Phone>
-        <Address id="A9">
+        <Address id="A9" NearestAirport="Sky Harbor">
             <Number>601</Number>
             <Street>S Ash Ave</Street>
             <City>Tempe</City>
             <State>AZ</State>
             <Zip>85281</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
     </Hotel>
 
-    <!-- Hotel 10: With Category -->
     <Hotel Category="Suite">
         <Name>Embassy Suites by Hilton Phoenix</Name>
         <Phone>602-765-5800</Phone>
-        <Address id="A10">
+        <Address id="A10" NearestAirport="Sky Harbor">
             <Number>10</Number>
             <Street>E Thomas Rd</Street>
             <City>Phoenix</City>
             <State>AZ</State>
             <Zip>85012</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
         <Rating>4.3</Rating>
     </Hotel>
 
-    <!-- Hotel 11: Without Category, with multiple phones -->
     <Hotel>
         <Name>Aloft Phoenix Airport</Name>
         <Phone>480-557-9933</Phone>
         <Phone>877-462-5638</Phone>
-        <Address id="A11">
+        <Address id="A11" NearestAirport="Sky Harbor">
             <Number>4450</Number>
             <Street>E Holmes Ave</Street>
             <City>Phoenix</City>
             <State>AZ</State>
             <Zip>85034</Zip>
-            <NearestAirport>Sky Harbor</NearestAirport>
         </Address>
         <Rating>4.0</Rating>
     </Hotel>

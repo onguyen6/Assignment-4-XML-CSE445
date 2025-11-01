@@ -87,12 +87,24 @@ namespace ConsoleApp1
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(xmlUrl);
 
-                //formatting.None for compact JSON
+                // Remove XML declaration
+                if (xmlDoc.FirstChild.NodeType == XmlNodeType.XmlDeclaration)
+                {
+                    xmlDoc.RemoveChild(xmlDoc.FirstChild);
+                }
+
+                // Remove schema attributes from root
+                if (xmlDoc.DocumentElement.HasAttributes)
+                {
+                    xmlDoc.DocumentElement.RemoveAttribute("xmlns:xsi");
+                    xmlDoc.DocumentElement.RemoveAttribute("xsi:noNamespaceSchemaLocation");
+                }
+
                 string jsonText = JsonConvert.SerializeXmlNode(xmlDoc, Newtonsoft.Json.Formatting.None);
-        
-                // verify it can be deserialized back (as required by assignment)
+
+                // Verify deserialization
                 JsonConvert.DeserializeXmlNode(jsonText);
-        
+
                 return jsonText;
             }
             catch (Exception ex)
